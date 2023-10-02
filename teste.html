@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente de API</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
+    <link rel="stylesheet" href="./style-teste.css">
+    <link href="../script/bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> 
+</head>
+<body>
+    <header>
+        <div class="row" id="head">
+            <div class="col-3" id="head">
+                <img src="./images/logoStellantis.png" alt="" class="logo">
+            </div>
+            <div class="col-9" id="head">
+                <h1 class="titleHeader">SGE - Sistema de Gestão de Eficiência</h1> 
+            </div>
+        </div>
+        
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="flex-column">
+                <div class="col-md-12 api">
+                    <div id="causais-container" class="container">
+                        <div id="data-container" class="row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <form action="./enviar_dados.php" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row" id="texts">
+                            <label for="TestCell">TestCell:</label>
+                        </div>
+                        <div class="row" id="inputs">
+                            <input type="text" name="TestCell" id="TestCell" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row" id="texts">
+                            <label for="causal">Causal:</label>
+                        </div>
+                        <div class="row" id="inputs">
+                            <input type="text" name="causal" id="causal" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row" id="texts">
+                            <label for="obs">Obs:</label>
+                        </div>
+                        <div class="row" id="inputs">
+                            <textarea name="obs" id="obs" cols="30" rows="4" style="height: 60px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row" id="texts">
+                            <input type="submit" value="enviar dados" onclick="alterLocalStorage(document.getElementById('TestCell').value, document.getElementById('causal').value)"/>
+                                                      
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- <button value="Aqui" id="teste" >Salvar</button> -->
+        
+    </footer>
+      
+    <script src="../script/script.js"></script> 
+    <script src="./api.js"></script> 
+    <script src="./require.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <script>
+        testCell = document.getElementById('testCell').value;
+        causal = document.getElementById('causal').value;
+    </script>
+    <script src="Att_dados.js"></script>
+
+
+</body>
+</html>
